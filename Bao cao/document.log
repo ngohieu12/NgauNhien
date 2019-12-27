@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 NEXT 64-bit) (preloaded format=pdflatex 2019.12.22)  27 DEC 2019 14:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 NEXT 64-bit) (preloaded format=pdflatex 2019.12.22)  27 DEC 2019 14:52
 entering extended mode
 **./document.tex
 (document.tex
@@ -314,20 +314,20 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 (document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -349,22 +349,25 @@ ase.sty
 Package: epstopdf-base 2019-12-09 v2.10 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-) [1
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
 
-
-{C:/Users/Admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(document.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
+
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[2
+[1
+
+{C:/Users/Admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [1
+
+]
+(document.toc [2
 
 ])
 \tf@toc=\write3
@@ -376,43 +379,43 @@ Ch\uhorn \ohorn ng 1.
 
 ] [5] [6] [7] [8] [9]
 Ch\uhorn \ohorn ng 2.
-Package color Info: Redefining color shadecolor on input line 173.
+Package color Info: Redefining color shadecolor on input line 177.
 [10
 
 ]
-Package color Info: Redefining color shadecolor on input line 190.
+Package color Info: Redefining color shadecolor on input line 194.
 
-Overfull \hbox (11.29904pt too wide) in paragraph at lines 202--203
+Overfull \hbox (11.29904pt too wide) in paragraph at lines 206--207
 []\T5/cmr/m/n/14.4 B¥y gií, chóng ta kiºm chùng xem $\OML/cmm/m/it/14.4 v[] \OT
 1/cmr/m/n/14.4 = (4287\OML/cmm/m/it/14.4 ; \OT1/cmr/m/n/14.4 4382\OML/cmm/m/it/
 14.4 ; \OT1/cmr/m/n/14.4 4441\OML/cmm/m/it/14.4 ; \OT1/cmr/m/n/14.4 4613)$
  []
 
 [11] [12]
-Package color Info: Redefining color shadecolor on input line 292.
+Package color Info: Redefining color shadecolor on input line 296.
  [13]
-Package color Info: Redefining color shadecolor on input line 342.
+Package color Info: Redefining color shadecolor on input line 346.
  [14] [15] [16] [17]
-Package color Info: Redefining color shadecolor on input line 595.
+Package color Info: Redefining color shadecolor on input line 599.
  [18]
-Package color Info: Redefining color shadecolor on input line 612.
+Package color Info: Redefining color shadecolor on input line 616.
 
-Overfull \hbox (46.13351pt too wide) detected at line 621
+Overfull \hbox (46.13351pt too wide) detected at line 625
 []
  []
 
 
-Overfull \hbox (26.21971pt too wide) detected at line 639
+Overfull \hbox (26.21971pt too wide) detected at line 643
 []
  []
 
 [19] [20]
 Ch\uhorn \ohorn ng 3.
-Package color Info: Redefining color shadecolor on input line 643.
+Package color Info: Redefining color shadecolor on input line 647.
 [21
 
 ]
-Overfull \hbox (16.58151pt too wide) in paragraph at lines 669--671
+Overfull \hbox (16.58151pt too wide) in paragraph at lines 673--675
 \T5/cmr/m/n/14.4 Cho $\OML/cmm/m/it/14.4 h[] \OT1/cmr/m/n/14.4 = 0$\T5/cmr/m/n/
 14.4 , gi£i h» ta ÷ñc nghi»m $\OML/cmm/m/it/14.4 h \OT1/cmr/m/n/14.4 = (0\OML/
 cmm/m/it/14.4 :\OT1/cmr/m/n/14.4 0\OML/cmm/m/it/14.4 ; \OT1/cmr/m/n/14.4 97\OML
@@ -421,19 +424,19 @@ OML/cmm/m/it/14.4 :\OT1/cmr/m/n/14.4 18\OML/cmm/m/it/14.4 ; \OT1/cmr/m/n/14.4 3
 22\OML/cmm/m/it/14.4 :\OT1/cmr/m/n/14.4 75)[]$
  []
 
-Package color Info: Redefining color shadecolor on input line 683.
-Package color Info: Redefining color shadecolor on input line 694.
+Package color Info: Redefining color shadecolor on input line 687.
+Package color Info: Redefining color shadecolor on input line 698.
 [22]
-Package color Info: Redefining color shadecolor on input line 706.
+Package color Info: Redefining color shadecolor on input line 710.
  [23] [24] [25] [26] [27] [28]
-Package color Info: Redefining color shadecolor on input line 1051.
+Package color Info: Redefining color shadecolor on input line 1055.
  [29]
-Overfull \hbox (36.42061pt too wide) detected at line 1080
+Overfull \hbox (36.42061pt too wide) detected at line 1084
 []
  []
 
 [30]
-Overfull \hbox (13.97516pt too wide) in paragraph at lines 1080--1082
+Overfull \hbox (13.97516pt too wide) in paragraph at lines 1084--1086
 \T5/cmr/m/n/14.4 Gi£i b i to¡n tr¶n ta ÷ñc nghi»m l  $\OML/cmm/m/it/14.4 x[] \
 OT1/cmr/m/n/14.4 = 0\OML/cmm/m/it/14.4 :\OT1/cmr/m/n/14.4 363\OML/cmm/m/it/14.4
  ; x[] \OT1/cmr/m/n/14.4 = 0\OML/cmm/m/it/14.4 :\OT1/cmr/m/n/14.4 229\OML/cmm/m
@@ -449,7 +452,7 @@ Ch\uhorn \ohorn ng 5.
 [33
 
 ]
-Overfull \hbox (3.77771pt too wide) detected at line 1156
+Overfull \hbox (3.77771pt too wide) detected at line 1160
 []
  []
 
@@ -459,11 +462,11 @@ Ch\uhorn \ohorn ng 6.
 
 ] (document.aux) ) 
 Here is how much of TeX's memory you used:
- 2974 strings out of 492483
- 35726 string characters out of 3123416
- 104248 words of memory out of 3000000
- 7294 multiletter control sequences out of 15000+200000
- 18619 words of font info for 39 fonts, out of 3000000 for 9000
+ 2976 strings out of 492483
+ 35759 string characters out of 3123416
+ 104324 words of memory out of 3000000
+ 7296 multiletter control sequences out of 15000+200000
+ 20575 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  33i,14n,29p,1121b,228s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/pub
@@ -480,9 +483,9 @@ y7.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnbx
 ti10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vn
 r12.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vnt
 i12.pfb>
-Output written on document.pdf (36 pages, 226330 bytes).
+Output written on document.pdf (37 pages, 229547 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
+ 171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
