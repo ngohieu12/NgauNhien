@@ -1,5 +1,10 @@
 import numpy as np
-m=3; n=5; alpha=0.9;
+
+x=np.loadtxt('m_n_alpha.txt');
+m=int(x[0]);
+n=int(x[1]);
+alpha=x[2];
+
 
 p=[] 
 f=[]
@@ -9,15 +14,13 @@ for i in range(m):
     p.append(np.loadtxt(x.format(i)))
     f.append(np.loadtxt(y.format(i)))
 
+
 I=np.eye(n);
 A=np.eye(n+1)
 A[n][0]=1
 A[n][n]=0
 for i in range(n):
-    A[i][n]=1
-    
-
-I=np.eye(n);
+    A[i][n]=1    
 
 w=f[0]
 a=np.zeros(n, dtype=np.int64)

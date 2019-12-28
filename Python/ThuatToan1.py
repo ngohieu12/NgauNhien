@@ -1,5 +1,8 @@
 import numpy as np
-m=3; n=5; alpha=0.95;
+x=np.loadtxt('m_n_alpha.txt');
+m=int(x[0]);
+n=int(x[1]);
+alpha=x[2];
 
 p=[] 
 f=[]
