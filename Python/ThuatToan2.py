@@ -15,6 +15,7 @@ for i in range(m):
 w=f[0]
 a=np.zeros(n, dtype=np.int64)
 g=np.zeros(n)
+I=np.eye(n)
 
 for i in range(n):
               for j in range(m):
