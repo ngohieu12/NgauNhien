@@ -1,8 +1,6 @@
 # NgauNhien
 Quá trình quyết định Markov
 
-Sau đây là link chương trình viết bằng Python trên Colab:
-
 Thư mục ViDu bao gồm chương trình đã được nhập dữ liệu sẵn
 
 Thư mục Python chứa chương trình đọc dữ liệu từ tệp.
