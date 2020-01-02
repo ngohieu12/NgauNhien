@@ -1,0 +1,403 @@
+\documentclass[12pt]{beamer}
+\usepackage[utf8]{vietnam}
+\usepackage{lmodern}
+\usetheme{Pittsburgh}
+\usecolortheme{crane}
+
+
+\begin{document}
+	\author{Ngô Quốc Trần Hiếu\\ Nguyễn Đức Minh \\Lê Thị Duyên}
+    \title{\color{violet}Quá trình quyết định Markov}
+	\subtitle{\color{red}Các mô hình ngẫu nhiên và ứng dụng}
+	%\logo{}
+	%\institute{}
+	%\date{}
+	%\subject{}
+	%\setbeamercovered{transparent}
+	%\setbeamertemplate{navigation symbols}{}
+	\begin{frame}[plain]
+			\maketitle
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Mục lục}
+        \tableofcontents
+    \end{frame}
+
+
+\section{Khái niệm cơ bản}
+\begin{frame}
+	\frametitle{Quá trình quyết định Markov}
+	\begin{block}{Định nghĩa 1}
+		Cho $X$ là một quá trình mô tả hệ thống (system description process) với không gian trạng thái $E$ và cho $D$ là một quá trình quyết định (decision process) với không gian hành động $A$. Quá trình $(X,D)$ là
+		\textit{Quá trình Quyết định Markov} nếu, với mọi $j\in E$ và $n=0,1,\dots$ ta đều có
+		\begin{align*}
+		P(X_{n+1}=j|X_0,D_0,\dots,X_n,D_n)=P(X_{n+1}=j|X_0,D_0).
+		\end{align*}
+		Hơn nữa, với mỗi $k\in A$, cho $f_k$ là một véc tơ chi phí, $P$ là ma trận Markov. Khi đó:
+		\begin{align*}
+		P(X_{n+1}=j|X_n=i, D_n=k)=P_k(i,j)
+		\end{align*}
+		và chi phí $f_k(i)$ phát sinh mỗi khi $X_n=i$ và $D_n=k$.
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ví dụ 1}
+	Cho quá trình Markov (X,D) có $E=\{1,2,3,4\}, A=\{1,2\}$
+	\begin{align*}
+	&f_1=(100,125,150,500)^T,\\
+	&f_2=(300,325, 350,600)^T,\\
+	&P_1=\left[
+	\begin{array}{cccc}
+	0.1&0.3&0.6&0.0\\
+	0.0&0.2&0.5&0.3\\
+	0.1&0.1&0.2&0.7\\
+	0.8&0.1&0.0&0.1
+	\end{array}
+	\right],\\
+	&P_2=\left[
+	\begin{array}{cccc}
+	0.6&0.3&0.1&0.0\\
+	0.75&0.1&0.1&0.05\\
+	0.8&0.2&0.0&0.0\\
+	0.9&0.1&0.0&0.0
+	\end{array}
+	\right].
+	\end{align*}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{Chính sách}
+	\begin{block}{Định nghĩa 2}
+		 Một \textit{chính sách (policy)} là một tập quy tắc, sử dụng thông tin hiện tại, thông tin quá khứ, và/hoặc ngẫu nhiên chỉ định hành động nào được thực hiện tại mỗi thời điểm. Tập tất cả các chính sách được biểu diễn bởi  $\mathcal{M}$ .
+	\end{block}
+
+
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ví dụ chính sách}
+	\begin{itemize}
+	  \item	
+		Chính sách 1. Luôn chọn hành động 1, không phụ thuộc vào trạng thái của $X$, tức $D_n \equiv 1$ với mọi $n$
+		
+  \item
+		Chính sách 2. Nếu $X_n$ ở trạng thái $a$ hoặc $b$, cho $D_n=1$; nếu $X_n$ ở trạng thái $c$ hoặc $d$, cho $D_n=2$.
+		
+	  \item
+		Chính sách 3. Nếu $X_n$ ở trạng thái $a$ hoặc $b$, cho $D_n=1$; nếu $X_n$ ở trạng thái $c$, tung một đồng xu và cho $D_n=1$ nếu đồng xu xấp, cho $D_n=2$ nếu đồng xu ngửa; nếu $X_n$ ở trạng thái $d$ thì cho $D_n=2$.
+		
+        \item
+		Chính sách 4. Cho $D_n\equiv1$ nếu $n=0$ và 1. Với $n \geq 2$, nếu $X_{n}>X_{n-1}$ và $X_{n-1}=a$, cho $D_n=1$. Nếu $X_n>X_{n-1}, X_{n-2}=b$ và $D_{n-1}=2$ cho $D_n=1$, ngược lại, $D_n=2$.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Kỳ vọng tổng chi phí có chiết khấu} 
+	Cho $\alpha$ là tỷ lệ chiết khẩu sao cho $1$ tại thời điểm $n=1$ có giá trị hiện tại bằng $\alpha$ tại thời điểm $n=0$. (Trong kinh tế, thông thường $\alpha=\dfrac{1}{r+1}$ với $r$ là lãi suất). Kỳ vọng tổng chi phí có chiết khấu cho một quá trình quyết định Markov được cho bởi công thức 
+	\begin{align*}
+	E(\sum_{n=0}^{\infty}\alpha^n f_{D_n}(X_n)).
+	\end{align*} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Kỳ vọng tổng chi phí có chiết khấu} 
+	 Ký hiệu $E_d[.]$ là kỳ vọng tổng chi phí có chiết khấu nếu sử dụng chính sách $d, d \in \mathcal{M}$. Đặt
+	\begin{align*}
+	v^{\alpha}_d= E_d(\sum_{n=0}^{\infty}\alpha^n f_{D_n}(X_n)|X_0=i)
+	\end{align*} 
+	với mọi $i \in E$ và $0<\alpha<1$. Từ đó nảy sinh bài toán tìm $d^{\alpha} \in \mathcal{M}$ sao cho
+	\begin{align}
+	v^{\alpha}_{d^\alpha}(i)=v^{\alpha}(i)=\underset{d \in \mathcal{M}}{\min} \ v^{\alpha}_d(i) \ \forall i\in E.  
+	\end{align}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Chi phí trung bình dài hạn}
+	  Chí phí trung bình dài hạn của một quá trình quyết định Markov khi áp dụng chính sách $d \in \mathcal{M}$ được đưa ra bởi công thức
+	\begin{align*}
+	\varphi_d=\underset{m \rightarrow \infty}{\mathrm{lim}}\dfrac{1}{m}\sum_{n=0}^{m-1}f_{D_n}(X_n). 
+	\end{align*}
+	Từ đó, nảy sinh bài toán tối ưu: Tìm $d^* \in \mathcal{M}$ sao cho 
+	\begin{align}
+	\varphi^*=\varphi_{d^*}=\underset{d \in \mathcal{M}}{\min} \varphi_d
+	\end{align}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Chính sách Cố định (Stationary Policies)}
+	\begin{block}{Định nghĩa 3}
+		Một \textit{hàm hành động} là một véc tơ ánh xạ từ không gian trạng thái vào không gian hành động.
+	\end{block}
+    Ví dụ: $a_1=(1,1,1,1), a_2=(1,1,2,2)$
+	\begin{block}{Định nghĩa 4}
+	 Một \textit{chính sách cố định} là một chính sách có thể được biểu diễn bằng một hàm hành động. Chính sách cố định được biểu diễn bằng hàm hành động $a$ thực hiện hành động $a(i)$ tại thời điểm $n$ nếu $X_n=i$, độc lập với các trạng thái trước, hành động trước, và thời điểm $n$. 
+    \end{block}
+    Ví dụ: Chính sách 1 được biểu diễn bằng hàm hành động $a_1$ và chính sách 2 được biểu diễn bằng hàm hành động $a_2$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Chính sách Cố định (Stationary Policies)}
+	\begin{itemize}
+		\item  Một quá trình quyết định Markov theo chính sách cố định luôn là một xích Markov.
+		\item Một quá trình quyết định Markov theo chính sách cố định được định nghĩa bằng hàm hành động $a$ là xích Markov có ma trận xác xuất chuyển và véc tơ chi phí là
+		\begin{align}
+		&P^a(i,j)=P_{a(i)}(i,j) \ \forall i,j \in E,\\
+		&f^a(i)=f_{a(i)}(i) \  \forall i\in E.
+		\end{align} 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Chính sách Cố định (Stationary Policies)}
+   \begin{exampleblock}{Tính chất 1}
+   	 \textit{Nếu không gian trạng thái $E$ hữu hạn, tồn tại một chính sách cố định là nghiệm của Bài toán (1.1). Thêm nữa, nếu mỗi chính sách cố định sinh ra một xích Markov không giảm, thì tồn tại một chính sách cố định là nghiệm của Bài toán (1.2). (Chính sách tối ưu phụ thuộc vào chiết khấu và có thể khác nhau đối với hai Bài toán (1.1) và (1.2.) }
+	\end{exampleblock}
+ \textit{Chú ý.} Xích Markov không giảm là xích chỉ có một lớp liên thông.
+\end{frame}
+
+
+\section{Các thuật toán chi phí có chiết khấu}
+\begin{frame}
+	\frametitle{Các thuật toán chi phí có chiết khấu}
+	\begin{exampleblock}{Tính chất 2}
+	 \textit{Cho $v^\alpha$ là hàm giá trị tối ưu của Bài toán (1.1) với $0<\alpha<1$. Hàm $v^\alpha$ thỏa mãn, với mọi $i \in E$, ta đều có
+	\begin{align}
+	v^\alpha (i)=\underset{k \in A} {\min }\{f_k(i)+\alpha \sum_{j \in E}P_k(i,j)v^\alpha(j)\} .
+	\end{align} 
+	Hơn nữa, nó là hàm duy nhất thỏa mãn tính chất này.}	
+	\end{exampleblock}
+     Tính chất 2 cung cấp cho ta một cách để kiểm tra xem một hàm có phải giá trị tối ưu của Bài toán (1) hay không
+\end{frame}
+\begin{frame}
+	\frametitle{Các thuật toán chi phí có chiết khấu}
+   \begin{exampleblock}{Tính chất 3}
+   	 \textit {Cho $v^\alpha$ là hàm giá trị tối ưu của Bài toán (1.1) với $0<\alpha<1$. Định nghĩa một hàm hành động, với mỗi $i\in E$, ta có
+   		\begin{align}
+   		a(i)=\mathrm{argmin}_{k\in A}\{f_k(i)+\alpha \sum_{j \in E}P_k(i,j)v^\alpha(j)\}
+   		\end{align}
+   		Chính sách cố định được định nghĩa bằng hàm hành động $a$ là chính sách tối ưu.}	
+   	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Cải thiện giá trị cho chi phí có
+		chiết khấu}
+\begin{exampleblock}{Thuật toán 1}
+\begin{itemize}
+	\item
+	Bước 1. Cho $\alpha <1$, chọn một giá trị dương đủ nhỏ $\epsilon$, đặt $n=0$, và đặt $v_0(i)=0$ với mỗi $i \in E$. (Ta đặt $v_0 =0$ để tiện tính toán, ta có thể chọn $v_0$ bất kỳ).
+	
+    \item
+	Bước 2. Với mỗi $i \in E$, xác định $v_{n+1}(i)$ như sau
+	\begin{align*}
+	v_{n+1}(i)=\underset{k \in A}{\min}\{f_k(i)+\alpha \sum_{j\in E} P_k(i,j)v_n(j)\}.
+	\end{align*}
+	
+    \item
+	Bước 3. Tính $\delta$
+	\begin{align*}
+	\delta=max\{|v_{n+1}(i)-v_{n}(i)|\}.
+	\end{align*}
+	
+    \item
+	Bước 4. Nếu $\delta<epsilon$, đặt $v^\alpha =v_{n+1}$ và dừng thuật toán; ngược lại, tăng $n$ thêm 1 và quay lại Bước 2.
+	\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Cải tiến chính sách cho chi phí có
+		chiết khấu}
+	\begin{exampleblock}{Thuật toán 2}
+		\begin{itemize}
+			\item
+			Bước 1. Cho $\alpha <1$, đặt $n=0$, định nghĩa hàm hành động $a_0$
+			\begin{align*}
+			a_0(i)=argmin_{k \in A}f_k(i)
+			\end{align*}
+			với mọi $i \in A$.
+			
+		\item
+			Bước 2. Xác định ma trận $P$ và véc tơ $f$
+			\begin{align*}
+			&f(i)=f_{a_n(i)}(i)\\
+			&P(i,j)=P_{a_n(i)}(i,j)
+			\end{align*} 
+			với mỗi $i,j \in E$.
+			
+			\end{itemize}
+	\end{exampleblock}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Cải tiến chính sách cho chi phí có
+		chiết khấu}
+	\begin{exampleblock}{Thuật toán 2}
+		\begin{itemize}	
+			\item
+			Bước 3. Tính véc tơ $v$
+			\begin{align*}
+			v=(I-\alpha P)^{-1}f.
+			\end{align*}
+			
+			\item
+			Bước 4. Xác định hàm hành động $a_{n+1}$ như sau
+			\begin{align*}
+			a_{n+1}(i)=\mathrm{argmin}_{k \in A}\{f_k(i)+\alpha \sum_{j \in E}P_k(i,j)v(j)\}
+			\end{align*}
+			
+			\item
+			Bước 5. Nếu $a_{n+1}=a_n$, đặt $v^\alpha =v, a^\alpha =a_n$ và dừng thuật toán, ngược lại tăng $n$ lên 1 và quay lại Bước 2. 
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Quy hoạch tuyến tính cho chi phí có chiết khấu}
+	\begin{exampleblock}{Thuật toán 3}
+	\textit{ Nghiệm tối ưu của bài toán sau đây chính là nghiệm tối ưu $v^\alpha$ của Bài toán (1) với $0<\alpha<1$
+		\begin{align*}
+		&\max \sum _{i\in E}u(i)\\
+		&\text{với điều kiện } \\
+		&u(i)\leq f_k(i)+\alpha \sum_{j \in E}P_k(i,j)u(j) \ \text{với mọi} \ i \in E, k \in A.  
+		\end{align*}
+	} 
+	\end{exampleblock}
+\end{frame}
+
+\section{Các thuật toán chi phí trung bình dài hạn}
+
+\begin{frame}
+	\frametitle{Các thuật toán chi phí trung bình dài hạn}
+\begin{alertblock}{Tính chất 4}
+	 \textit{Giả sử rằng mọi chính sách cố định đều sinh ra mỗi xích Markov với tập không giảm. Khi đó, tồn tại một đại lượng vô hướng $\varphi^*$ và một véc tơ $h$ thỏa mãn, với mọi $i \in E$,
+		\begin{align}
+		\varphi^*+h(i)=\underset{k \in A}{\min}\{f_k(i)+\sum_{j \in E}P_k(i,j)h(j)\}.
+		\end{align}
+		Đại lượng vô hướng $\varphi ^*$ là giá trị tối ưu của Bài toán (1.2), và hàm hành động tối ưu là
+		\begin{align*}
+		a(i)=\mathrm{argmin}_{k\in A}\{f_k(i)+\sum_{j\in E}P_k(i,j)h(j)\}
+		\end{align*}
+		Véc tơ $h$ là duy nhất sai khác một hằng số.
+	} 
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Các thuật toán chi phí trung bình dài hạn}
+	Từ Tính chất 4, ta có
+	\begin{align}
+	\varphi^*+h(i)=f_{a(i)}(i)+\sum_{j \in E}P_{a(i)}(i,j)h(j)\\
+	\Leftrightarrow \varphi^*+h(i)=f_{a(i)}(i)+(P_{a(i)}h)(i).
+	\end{align}
+	\begin{alertblock}{Tính chất 5}
+		\textit{Cho $v^\alpha$ là giá trị tối ưu của Bài toán (1),$\varphi^*$ là giá trị tối ưu của Bài toán (2)  giả sử mọi trạng thái cố định đều sinh ra xích Markov với một tập không giảm. Khi đó
+			\begin{align*}
+			\underset{\alpha \rightarrow 1}{\mathrm{lim}}(1-\alpha)v^\alpha(i)=\varphi^*
+			\end{align*}
+			với mọi $i \in E$.
+		} 
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Các thuật toán chi phí trung bình dài hạn}
+	
+	\begin{alertblock}{Tính chất 6}
+		\textit{Cho $v^\alpha$ là giá trị tối ưu của Bài toán (1), $\varphi^*$ là giá trị tối ưu của Bài toán (2), $h$ là véc tơ được xác định ở Tính chất (4). Khi đó
+			\begin{align*}
+			\underset{\alpha \rightarrow 1}{\mathrm{lim}}[v^\alpha (i)-v^\alpha (j)]=h(i)-h(j)
+			\end{align*}
+			với mọi $i,j \in E$.
+		}  
+	\end{alertblock}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{ Cải tiến chính sách cho chi phí trung bình}
+	\begin{block}{Thuật toán 4}
+\begin{itemize}
+	\item
+		Bước 1. Cho $n=0$, ký hiệu trạng thái đầu tiên trong không gian trạng thái là 1, ta xác định hàm hành động $a_0$
+	\begin{align*}
+	a_0(i)=\mathrm{argmin}_{k \in A}f_k(i)
+	\end{align*}
+	với mỗi $i \in E$.
+	
+	\item
+	Bước 2. Xác định ma trận $P$ và véc tơ $f$ như sau
+	\begin{align*}
+	&f(i)=f_{a_n(i)}(i)\\
+	&P(i,j)=P_{a_n(i)}(i,j)
+	\end{align*}
+	với mỗi $i,j \in E$.
+	\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{ Cải tiến chính sách cho chi phí trung bình}
+	\begin{block}{Thuật toán 4}
+		\begin{itemize}
+			\item
+	 	Bước 3. Xác định giá trị $\varphi$ và $h$ bằng việc giải hệ
+	\begin{align*}
+	\varphi +h=f +Ph
+	\end{align*} 
+	trong đó $h(1)=0$.
+	
+\item
+	Bước 4. Xác định hàm hành động $a_{n+1}$ như sau
+	\begin{align*}
+	a_{n+1}(i)=\mathrm{argmin}_{k \in A}\{f_k(i)+\sum_{j\in E}P_k(i,j)h(j)\}
+	\end{align*}
+	với mỗi $i \in E$.
+
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{ Cải tiến chính sách cho chi phí trung bình}
+	\begin{block}{Thuật toán 4}
+		\begin{itemize}
+			\item
+			Bước 5.
+			Nếu $a_{n+1}=a_n$, đặt $\varphi^*=\varphi, a^*=a_n$, và dừng thuật toán, ngược lại tăng $n$ thêm một và quay lại Bước 2.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Quy hoạch tuyến tính cho chi phí trung bình}
+\begin{block}{Thuật toán 5}
+   \textit {Giá trị tối ưu của bài toán quy hoạch tuyến tính dưới đây là giá trị tối ưu của bài toán (2)
+	\begin{align*}
+	&\min \varphi =\sum_{i \in E} \sum_{k \in A}x(i,k)f_k(i)\\
+	&\text{với điều kiện}\\
+	&\sum_{k \in A}x(j,k)=\sum_{i \in E}\sum_{k \in A}x(i,k)P_k(i,j) \ \text{với mọi} \ j \in E\\
+	&\sum_{i \in E}\sum_{k \in A}x(i,k)=1\\
+	&x(i,k) \geq 0 \ \text{với mọi} \ i\in E \ \text{và} \ k\in A
+	\end{align*}
+	Chính sách tối ưu là chọn hành động $k$ cho trạng thái $i$ sao cho $x(i,k)>0$
+}
+	\end{block}
+\end{frame}
+
+\section{Kết thúc}
+\begin{frame}
+\frametitle{Hết}
+\center
+\huge
+\color{red}
+ Cảm ơn cô và các bạn đã theo dõi
+\end{frame}
+
+\end{document}
