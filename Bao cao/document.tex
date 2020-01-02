@@ -21,7 +21,7 @@
 	Báo cáo này sẽ trình bày những kiến thức cơ bản về quá trình quyết định Markov và ứng dụng. Chúng em xin cảm ơn cô Nguyễn Thị Ngọc Anh đã tận tình hướng dẫn, giúp chúng em hoàn thành báo cáo này. Do thời gian gấp gáp, báo cáo không tránh khỏi sai sót. Chúng em mong nhận được những lời đóng của cô để bài báo cáo hoàn thiện hơn.
 	
 	\vfill
-	\hfill Hà Nội, tháng 12 năm 2019
+	\hfill Hà Nội, tháng 1 năm 2020
 	
 	\tableofcontents
 	\chapter{Khái niệm cơ bản}
@@ -602,12 +602,12 @@ Bước 3.
    	\noindent
    	\textbf{Tính chất 2.5. \textit{Bổ đề về quy hoạch tuyến tính}} \textit{ Cho $v^\alpha$ là giá trị tối ưu của Bài toán (1.1) với $0<\alpha<1$, và cho $u$ là một hàm thực trên không gian $E$ (hữu hạn). Nếu $u$ thỏa mãn
    		\begin{align*}
-   		u(i)i \leq \underset{k \in A}{\min}\{f_k(i)+\alpha \sum_{j \in E}P_k(i)u(j)\}
+   		u(i) \leq \underset{k \in A}{\min}\{f_k(i)+\alpha \sum_{j \in E}P_k(i)u(j)\}
    		\end{align*}
-   với mọi $i\in E$, thì $u \leq v^\alpha$	
+   với mọi \ $i\in E$, thì $u \leq v^\alpha$	
     } 
    \end{shaded*}
-  Xét tập được tạo bởi tất cả các hàm thỏa mãn Tính chất 2.5, sau đó từ Tính chât 2.2 ta biết rằng giá trị tối ưu $v^\alpha$ thuộc tập trên. Tính chất 2.6 cho biết hàm lớn nhất trong tập trên chính là $v^\alpha$. Nói cách khác, $\alpha$ là nghiệm tối ưu của bài toán
+  Xét tập được tạo bởi tất cả các hàm thỏa mãn Tính chất 2.5, sau đó từ Tính chât 2.1 ta biết rằng giá trị tối ưu $v^\alpha$ thuộc tập trên. Tính chất 2.6 cho biết hàm lớn nhất trong tập trên chính là $v^\alpha$. Nói cách khác, 1$\alpha$ là nghiệm tối ưu của bài toán
   
   \begin{align*}
   &\max \ u\\
@@ -621,7 +621,7 @@ Bước 3.
   		\begin{align*}
   		&\max \sum _{i\in E}u(i)\\
   		&\text{với điều kiện } \\
-  		& &u(i)\leq f_k(i)+\alpha \sum_{j \in E}P_k(i,j)u(j) \ \text{với mọi} i \in E, k \in A.  
+  		&u(i)\leq f_k(i)+\alpha \sum_{j \in E}P_k(i,j)u(j) \ \text{với mọi} \ i \in E, k \in A.  
   		\end{align*}
   	} 
   
@@ -692,7 +692,7 @@ Bước 3.
     		\begin{align*}
     		\underset{\alpha \rightarrow 1}{\mathrm{lim}}(1-\alpha)v^\alpha(i)=\varphi^*
     		\end{align*}
-    		với mỗi $i \in E$.
+    		với mọi $i \in E$.
     	} 
     \end{shaded*}   
 
@@ -1058,13 +1058,14 @@ với mọi $j \in E$. Kết hợp phương trình (3.4), (3.5) với phương t
 	\noindent
 	\textbf{Tính chất 3.5.\textit{Quy hoạch tuyến tính cho chi phí trung bình}} \textit {Nghiệm tối ưu của bài toán quy hoạch tuyến tính dưới đây là giá trị tối ưu của bài toán (1.2)
 \begin{align*}
-&\min \varphi =\sum_{i \in E} \sum_{k \in A}x(i,k)k_k(i)\\
+&\min \varphi =\sum_{i \in E} \sum_{k \in A}x(i,k)f_k(i)\\
 &\text{với điều kiện}\\
 &\sum_{k \in A}x(j,k)=\sum_{i \in E}\sum_{k \in A}x(i,k)P_k(i,j) \ \text{với mọi} \ j \in E\\
 &\sum_{i \in E}\sum_{k \in A}x(i,k)=1\\
 &x(i,k) \geq 0 \ \text{với mọi} \ i\in E \ \text{và} \ k\in A
 \end{align*}
 }
+Chính sách tối ưu là chọn hành động $k$ cho trạng thái $i$ sao cho $x(i,k)>0$
 \end{shaded*}
 
 \medskip
