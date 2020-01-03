@@ -172,9 +172,9 @@
 	\chapter{Các thuật toán chi phí có chiết khấu}	
     Mục này sẽ giới thiệu ba thủ tục tìm chính sách tối ưu cho tiêu chí tổng chi phí có chiết khấu. Các thủ tục này dựa trên tính chất điểm cố định.
     
-    Trong toán học, một hàm được gọi là bất biến đối với một phép toán nếu phép toán không làm thay đổi hàm. Ví dụ, trạng thái dừng $\pi$, còn được gọi là véc tơ bất biến cho trận Markov $P$ bởi vì phép toán $\pi P$ không làm thay đổi véc tơ $\pi$. Cho quá trình quyết định Markov, phép toán sẽ phức tạp hơn phép nhân ma trận, nhưng ý tưởng cơ bản về hàm bất biến không giảm. Nếu hàm bất biến là duy nhất, thì nó được gọi là điểm cố định cho phép toán 
+    Trong toán học, một hàm được gọi là bất biến đối với một phép toán nếu phép toán không làm thay đổi hàm. Ví dụ, trạng thái dừng $\pi$, còn được gọi là véc tơ bất biến cho ma trận Markov $P$ bởi vì phép toán $\pi P$ không làm thay đổi véc tơ $\pi$. Cho quá trình quyết định Markov, phép toán sẽ phức tạp hơn phép nhân ma trận, nhưng ý tưởng cơ bản về hàm bất biến không thay đổi. Nếu hàm bất biến là duy nhất, thì nó được gọi là điểm cố định cho phép toán 
     
-    \medskip
+    \medskipđổi
      \definecolor{shadecolor}{rgb}{0.7,0.7,0.7}
     \begin{shaded*}
     	\noindent
@@ -607,7 +607,7 @@ Bước 3.
    với mọi \ $i\in E$, thì $u \leq v^\alpha$	
     } 
    \end{shaded*}
-  Xét tập được tạo bởi tất cả các hàm thỏa mãn Tính chất 2.5, sau đó từ Tính chât 2.1 ta biết rằng giá trị tối ưu $v^\alpha$ thuộc tập trên. Tính chất 2.6 cho biết hàm lớn nhất trong tập trên chính là $v^\alpha$. Nói cách khác, 1$\alpha$ là nghiệm tối ưu của bài toán
+  Xét tập được tạo bởi tất cả các hàm thỏa mãn Tính chất 2.5, sau đó từ Tính chât 2.1 ta biết rằng giá trị tối ưu $v^\alpha$ thuộc tập trên. Hơn nữa $v^\alpha$ là hàm lớn nhất trong tập trên. Nói cách khác, $v^\alpha$ là nghiệm tối ưu của bài toán
   
   \begin{align*}
   &\max \ u\\
@@ -699,7 +699,7 @@ Bước 3.
   \definecolor{shadecolor}{rgb}{0.7,0.7,0.7}
 \begin{shaded*}
 	\noindent
-	\textbf{Tính chất 3.3. } \textit{Cho $v^\alpha$ là giá trị tối ưu của Bài toán (1.1), $\varphi^*$ là giá trị tối ưu của Bài toán (1.2), $h$ là véc tơ được xác định ở Tính chất (2.7). Khi đó
+	\textbf{Tính chất 3.3. } \textit{Cho $v^\alpha$ là giá trị tối ưu của Bài toán (1.1), $\varphi^*$ là giá trị tối ưu của Bài toán (1.2), $h$ là véc tơ được xác định ở Tính chất (3.1). Khi đó
 		\begin{align*}
 		\underset{\alpha \rightarrow 1}{\mathrm{lim}}[v^\alpha (i)-v^\alpha (j)]=h(i)-h(j)
 		\end{align*}
